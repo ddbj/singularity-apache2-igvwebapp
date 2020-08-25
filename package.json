@@ -1,0 +1,41 @@
+{
+  "name": "igv-webapp",
+  "version": "1.2.9",
+  "description": "igv web app",
+  "keywords": [],
+  "author": "Douglass Turner and Jim Robinson",
+  "license": "MIT",
+  "scripts": {
+    "start": "http-server -p 38081 dist",
+    "build": "node scripts/updateVersion.js && node scripts/clean.js && rollup -c && node scripts/copyArtifacts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igvteam/igv-webapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/igvteam/igv-webapp/issues"
+  },
+  "homepage": "https://github.com/igvteam/igv-webapp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-regenerator": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "core-js": "^3.6.5",
+    "eslint": "^6.8.0",
+    "fs-extra": "^8.1.0",
+    "http-server": "^0.12.3",
+    "regenerator-runtime": "^0.13.5",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-strip": "^1.2.2",
+    "rollup-plugin-terser": "^5.3.0"
+  },
+  "dependencies": {
+    "igv-widgets": "github:igvteam/igv-widgets#v1.0.2"
+  }
+}
