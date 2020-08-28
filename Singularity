@@ -18,28 +18,12 @@ From: ubuntu:18.04
 
 %post
     echo "Hello from inside the container"
-    sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
-    sed -i.bak -e "s%http://security.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
+#    sed -i.bak -e "s%http://archive.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
+#    sed -i.bak -e "s%http://security.ubuntu.com/ubuntu/%http://ftp.jaist.ac.jp/pub/Linux/ubuntu/%g" /etc/apt/sources.list
     apt-get -y update
     apt-get -y upgrade
         
     apt-get -y install vim wget less
-
-    # install nodejs, npm
-    apt-get -y install git
-
-    apt-get -y install nodejs npm
-    npm install -g n
-    n lts
-    apt -y purge nodejs npm
-    apt -y autoremove
-
-    # install igv-webapp
-    cd /usr/local/src
-    git clone https://github.com/igvteam/igv-webapp.git
-    cd igv-webapp
-    npm install
-    npm run build
 
     # install apache2.4
     apt-get -y install make gcc
@@ -67,5 +51,21 @@ From: ubuntu:18.04
     make -j 8
     make install
 
-    rm -r /usr/local/src/httpd-${APACHE_VERSION}
+    cd /usr/local/src/
+    rm -r /usr/local/src/httpd*
 
+    # install nodejs, npm
+    apt-get -y install git
+
+    apt-get -y install nodejs npm
+    npm install -g n
+    n lts
+    apt -y purge nodejs npm
+    apt -y autoremove
+
+    # install igv-webapp
+    git clone https://github.com/igvteam/igv-webapp.git
+    cd igv-webapp
+    git checkout refs/tags/v1.2.8
+    npm install
+    npm run build

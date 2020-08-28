@@ -1,13 +1,13 @@
 {
   "name": "igv-webapp",
-  "version": "1.3.0",
+  "version": "1.2.8",
   "description": "igv web app",
   "keywords": [],
   "author": "Douglass Turner and Jim Robinson",
   "license": "MIT",
   "scripts": {
-    "start": "npx http-server -p 38081 dist",
-    "build": "node scripts/updateVersion.js && node scripts/clean.js && rollup -c && node scripts/copyArtifacts.js"
+    "start": "http-server -p 38081 dist",
+    "build": "node scripts/clean.js && rollup -c && node scripts/copyArtifacts.js"
   },
   "repository": {
     "type": "git",
@@ -18,14 +18,16 @@
   },
   "homepage": "https://github.com/igvteam/igv-webapp#readme",
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/plugin-transform-regenerator": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
-    "core-js": "^3.6.5",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-regenerator": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "core-js": "^3.6.4",
+    "data-modal": "github:igvteam/data-modal",
     "eslint": "^6.8.0",
     "fs-extra": "^8.1.0",
-    "regenerator-runtime": "^0.13.7",
+    "http-server": "^0.12.1",
+    "regenerator-runtime": "^0.13.5",
     "rollup": "^1.32.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -33,8 +35,5 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-strip": "^1.2.2",
     "rollup-plugin-terser": "^5.3.0"
-  },
-  "dependencies": {
-    "igv-widgets": "github:igvteam/igv-widgets#dcb999eb"
   }
 }
