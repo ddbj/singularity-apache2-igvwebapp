@@ -39,7 +39,7 @@ htdocsディレクトリに、igv-webappで表示したいbamファイルとイ�
 
 ## igv-webappへのアクセス
 
-ウェブブラウザで http://<ホストのIDアドレス>:<package.jsonに設定したポート番号> にアクセスしてください。
+ウェブブラウザで http://<ホストのIPアドレス>:<package.jsonに設定したポート番号> にアクセスしてください。
 トラックの追加は、TracksメニューからURLを選び、
 
 * http://<ホストのIDアドレス>:<httpd.confに設定したポート番号>/<htdocsに配置したbamファイル>
