@@ -19,7 +19,7 @@ if [ ! -e ${CONTAINER_HOME}/logs ]; then
 fi
 
 if [ ! -e ${CONTAINER_HOME}/${IMAGE} ]; then
-    singularity pull library://yookuda/default/ubuntu-18.04-apache-2.4.38-igv-webapp-1.2.8-default:latest
+    singularity pull --arch amd64 library://yookuda/default/ubuntu-18.04-apache-2.4.38-igv-webapp-1.2.8-default:latest
 fi
 
 singularity instance start \
