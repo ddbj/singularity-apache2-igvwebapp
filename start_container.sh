@@ -4,7 +4,7 @@ module load singularity/3.5.2
 
 CONTAINER_HOME=$(cd $(dirname $0); pwd)
 CONTAINER="apache_igvwebapp"
-IMAGE="ubuntu-18.04-apache-2.4.38-igvwebapp-1.2.8-default_latest.sif"
+IMAGE="ubuntu-18.04-apache-2.4.48-igvwebapp-1.5.5_latest.sif"
 
 if [ ! -e ${CONTAINER_HOME}/htdocs ]; then
     mkdir ${CONTAINER_HOME}/htdocs
@@ -19,7 +19,7 @@ if [ ! -e ${CONTAINER_HOME}/logs ]; then
 fi
 
 if [ ! -e ${CONTAINER_HOME}/${IMAGE} ]; then
-    singularity pull --arch amd64 library://yookuda/default/ubuntu-18.04-apache-2.4.38-igvwebapp-1.2.8-default:latest
+    singularity pull --arch amd64 library://yookuda/default/ubuntu-18.04-apache-2.4.48-igvwebapp-1.5.5:latest
 fi
 
 singularity instance start \

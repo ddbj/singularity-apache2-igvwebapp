@@ -18,13 +18,13 @@ netstatコマンドで38080が未使用なら変更不要です。
 
     {
       "name": "igv-webapp",
-      "version": "1.2.8",
+      "version": "1.5.5",
       "description": "igv web app",
       "keywords": [],
       "author": "Douglass Turner and Jim Robinson",
       "license": "MIT",
       "scripts": {
-        "start": "http-server -p 38081 dist",
+        "start": "npx http-server -p 38081 dist",
 
 38081をigv-webappが使用するポート番号に修正します。
 netstatコマンドで38081が未使用なら変更不要です。
@@ -33,7 +33,7 @@ netstatコマンドで38081が未使用なら変更不要です。
 
     $ bash start_container.sh
 
-初回実行時に、ubuntu-18.04-apache-2.4.38-igv-webapp-1.2.8_latest.sif がダウンロードされます。
+初回実行時に、ubuntu-18.04-apache-2.4.48-igv-webapp-1.5.5_latest.sif がダウンロードされます。
 また、cgi-bin, htdocs, logsディレクトリが作成されます。
 htdocsディレクトリに、igv-webappで表示したいbamファイルとインデックスファイルを配置してください。
 

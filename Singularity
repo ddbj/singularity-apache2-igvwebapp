@@ -31,12 +31,12 @@ From: ubuntu:18.04
 
     export LC_CTYPE=C
     cd /usr/local/src
-    export APACHE_VERSION=2.4.38
+    export APACHE_VERSION=2.4.48
     wget http://archive.apache.org/dist/httpd/httpd-${APACHE_VERSION}.tar.gz
     tar zxvf httpd-${APACHE_VERSION}.tar.gz
     cd httpd-${APACHE_VERSION}/srclib
 
-    export APR_VERSION=1.6.5
+    export APR_VERSION=1.7.0
     wget http://archive.apache.org/dist/apr/apr-${APR_VERSION}.tar.gz
     tar zxvf apr-${APR_VERSION}.tar.gz
     mv apr-${APR_VERSION} apr
@@ -66,6 +66,6 @@ From: ubuntu:18.04
     # install igv-webapp
     git clone https://github.com/igvteam/igv-webapp.git
     cd igv-webapp
-    git checkout refs/tags/v1.2.8
-    npm install
-    npm run build
+    git checkout refs/tags/v1.5.5
+    /usr/local/bin/npm install
+    /usr/local/bin/npm run build
